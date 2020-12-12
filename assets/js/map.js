@@ -492,6 +492,16 @@ $(window).load(function(){
         initmarker (markerssucces, "succes");
         nbtmark += markerssucces.length;
         console.log(i18n["ui-succes"] + markerssucces.length + i18n["ui-load"]);
+
+        // Marqueur de Bienvenue et d'infos
+
+        //	L.marker([ 100, 150], {icon: Credits, title: "Crédits et Remerciements"}).addTo(mymap).bindPopup('<p><h4>Crédits et Remerciements</h4></p><p align="center"><h3>Conception :</h3></p><p align="center">TMKFrench</p><h3>Screenshots et Vidéos :</h3><p align="center">TMKFrench<br>ManqueDeBol<br>AstamoranVoz<br>Tumay<br>SupremB4N4N4</p><h3>Contributeurs et Aide :</h3><p align="center">Ackile<br>Larolina<br>Conan<br>kerthe17</p>', popupOptions);
+        L.marker([ 100, 150], {icon: Alire, title: "Notes Importantes"}).addTo(mymap).bindPopup('<h4>Notes Importantes</h4><br><h3>Utilisation du Stockage Local :</h3><p style="color : red;">Ce site utilise un système de Stockage Local pour sauvegarder<br>vos préférences et avancement sur la Map (Menu et marqueurs).<br>En aucun cas nous ne recupérons et stockons de données personnelles.<br>Les fonctions de Reset et d\'Import/export agissent sur<br>les 2 maps de Mondstadt ET Liyue !!!</p>', popupOptions);
+        if (sessionStorage.languagemap == "fr") {
+            L.marker([  60,1943], {icon: Null, title: ""}).addTo(mymap).bindPopup('<h4><img src="media/logo.jpg"/><br>TMKFrench - LGDC</h4><h3>NOUVEAU !!! Tous les Panoramas<br>Bienvenue sur notre Map interactive !</h3><p>Cliquez sur une icône de votre choix pour plus d\'info.<br>Utilisez la molette de la souris pour zoomer<br>et le menu pour afficher ou masquer les POIs.<br><a style="color:red;">Nombre de Marker : ' + nbtmark + '</a><br><br><a style="color : red;"><strong>Release V3.5 du 11/11/2020</strong></a><br>Rajout des marqueurs pour les matériaux de farm<br>Passage au Stockage local à la place des cookies<br>Mise en ligne de la map de Liyue.<br><br>Si vous voulez participer en m\'envoyant de nouveaux<br>emplacements, n\'hésitez pas à me contacter<br>par mail à infomap@tmkfrench.fr ou par<br>MP sur discord : TMKFrench#4221', {'minWidth': '640px','minHeight': '480px'}).openPopup();
+        } else {
+            L.marker([  60,1943], {icon: Null, title: ""}).addTo(mymap).bindPopup('<h4><img src="media/logo.jpg"/><br>TMKFrench - LGDC</h4><h3>NEW !!! All Viewpoint<br>Welcome to our Interactive Map !</h3><p>Clic on a Marker of your choice for more information.<br>Use mouse wheel to zoom<br>and the menu to toggle POIs.<br><a style="color:red;">Marker\'s count : ' + nbtmark + '</a><br><br><a style="color : red;"><strong>Release V3.5 of 11/11/2020</strong></a><br>Adding Materials markers. Using local storage instead of cookies.<br>Liyue\'s Map is Online<br><br>If you want to participate, giving me new location on<br>map, feel free to contact me by mail<br>at infomap@tmkfrench.fr or by Discord PM : TMKFrench#4221', {'minWidth': '640px','minHeight': '480px'}).openPopup();
+        };
     } else {
         var markerspano = loadmarker(listpano,Pano,i18n.cat03,"panol","panol");
         initmarker (markerspano, "panol");
@@ -536,16 +546,6 @@ $(window).load(function(){
         nbtmark += Number(localStorage.nbtliyue);
     } else {
         localStorage.nbtliyue = 0;
-    };
-
-        // Marqueur de Bienvenue et d'infos
-
-        //	L.marker([ 100, 150], {icon: Credits, title: "Crédits et Remerciements"}).addTo(mymap).bindPopup('<p><h4>Crédits et Remerciements</h4></p><p align="center"><h3>Conception :</h3></p><p align="center">TMKFrench</p><h3>Screenshots et Vidéos :</h3><p align="center">TMKFrench<br>ManqueDeBol<br>AstamoranVoz<br>Tumay<br>SupremB4N4N4</p><h3>Contributeurs et Aide :</h3><p align="center">Ackile<br>Larolina<br>Conan<br>kerthe17</p>', popupOptions);
-    L.marker([ 100, 150], {icon: Alire, title: "Notes Importantes"}).addTo(mymap).bindPopup('<h4>Notes Importantes</h4><br><h3>Utilisation du Stockage Local :</h3><p style="color : red;">Ce site utilise un système de Stockage Local pour sauvegarder<br>vos préférences et avancement sur la Map (Menu et marqueurs).<br>En aucun cas nous ne recupérons et stockons de données personnelles.<br>Les fonctions de Reset et d\'Import/export agissent sur<br>les 2 maps de Mondstadt ET Liyue !!!</p>', popupOptions);
-    if (sessionStorage.languagemap == "fr") {
-        L.marker([  60,1943], {icon: Null, title: ""}).addTo(mymap).bindPopup('<h4><img src="media/logo.jpg"/><br>TMKFrench - LGDC</h4><h3>NOUVEAU !!! Tous les Panoramas<br>Bienvenue sur notre Map interactive !</h3><p>Cliquez sur une icône de votre choix pour plus d\'info.<br>Utilisez la molette de la souris pour zoomer<br>et le menu pour afficher ou masquer les POIs.<br><a style="color:red;">Nombre de Marker : ' + nbtmark + '</a><br><br><a style="color : red;"><strong>Release V3.5 du 11/11/2020</strong></a><br>Rajout des marqueurs pour les matériaux de farm<br>Passage au Stockage local à la place des cookies<br>Mise en ligne de la map de Liyue.<br><br>Si vous voulez participer en m\'envoyant de nouveaux<br>emplacements, n\'hésitez pas à me contacter<br>par mail à infomap@tmkfrench.fr ou par<br>MP sur discord : TMKFrench#4221', {'minWidth': '640px','minHeight': '480px'}).openPopup();
-    } else {
-        L.marker([  60,1943], {icon: Null, title: ""}).addTo(mymap).bindPopup('<h4><img src="media/logo.jpg"/><br>TMKFrench - LGDC</h4><h3>NEW !!! All Viewpoint<br>Welcome to our Interactive Map !</h3><p>Clic on a Marker of your choice for more information.<br>Use mouse wheel to zoom<br>and the menu to toggle POIs.<br><a style="color:red;">Marker\'s count : ' + nbtmark + '</a><br><br><a style="color : red;"><strong>Release V3.5 of 11/11/2020</strong></a><br>Adding Materials markers. Using local storage instead of cookies.<br>Liyue\'s Map is Online<br><br>If you want to participate, giving me new location on<br>map, feel free to contact me by mail<br>at infomap@tmkfrench.fr or by Discord PM : TMKFrench#4221', {'minWidth': '640px','minHeight': '480px'}).openPopup();
     };
 
 // Fonctions Interaction Map
