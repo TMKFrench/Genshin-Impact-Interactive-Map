@@ -196,5 +196,6 @@ var i18n = {
     'com086': 'Enter the cave then swim to the chest',
     'com087': 'Ignite the 4 torches to unlock the chest',
     'com088': 'Break the crystal and bring back the star<br>to the lantern to reveal the chest',
-    'com089': 'Kill Dendro Blobs group to reveal the chest'
+    'com089': 'Kill Dendro Blobs group to reveal the chest',
+    'com090': '2 Exquisite Chests'
 };

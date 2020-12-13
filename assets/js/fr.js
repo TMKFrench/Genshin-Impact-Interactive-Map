@@ -197,5 +197,6 @@ var i18n = {
     'com086': 'Rentrez dans la grotte puis nagez jusqu\'au coffre',
     'com087': 'Enflammer les 4 torches pour déverrouiller le coffre',
     'com088': 'Casser le cristal et ramenez l\'étoile<br>à la lanterne pour faire apparaitre le coffre',
-    'com089': 'Tuer le groupe de Blobs Dendro pour<br>faire apparaitre le coffre'
+    'com089': 'Tuer le groupe de Blobs Dendro pour<br>faire apparaitre le coffre',
+    'com090': '2 Coffres Délicats'
 };

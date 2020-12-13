@@ -493,7 +493,13 @@ $(window).load(function(){
         nbtmark += markerssucces.length;
         console.log(i18n["ui-succes"] + markerssucces.length + i18n["ui-load"]);
 
-        // Marqueur de Bienvenue et d'infos
+        if (localStorage.nbtliyue) {
+            nbtmark += Number(localStorage.nbtliyue);
+        } else {
+            localStorage.nbtliyue = 0;
+        };
+    
+            // Marqueur de Bienvenue et d'infos
 
         //	L.marker([ 100, 150], {icon: Credits, title: "Crédits et Remerciements"}).addTo(mymap).bindPopup('<p><h4>Crédits et Remerciements</h4></p><p align="center"><h3>Conception :</h3></p><p align="center">TMKFrench</p><h3>Screenshots et Vidéos :</h3><p align="center">TMKFrench<br>ManqueDeBol<br>AstamoranVoz<br>Tumay<br>SupremB4N4N4</p><h3>Contributeurs et Aide :</h3><p align="center">Ackile<br>Larolina<br>Conan<br>kerthe17</p>', popupOptions);
         L.marker([ 100, 150], {icon: Alire, title: "Notes Importantes"}).addTo(mymap).bindPopup('<h4>Notes Importantes</h4><br><h3>Utilisation du Stockage Local :</h3><p style="color : red;">Ce site utilise un système de Stockage Local pour sauvegarder<br>vos préférences et avancement sur la Map (Menu et marqueurs).<br>En aucun cas nous ne recupérons et stockons de données personnelles.<br>Les fonctions de Reset et d\'Import/export agissent sur<br>les 2 maps de Mondstadt ET Liyue !!!</p>', popupOptions);
@@ -542,12 +548,6 @@ $(window).load(function(){
 
         localStorage.nbtliyue = nbtmark;
     };
-    if (localStorage.nbtliyue) {
-        nbtmark += Number(localStorage.nbtliyue);
-    } else {
-        localStorage.nbtliyue = 0;
-    };
-
 // Fonctions Interaction Map
 
     mymap.on("click", onMapClick);
