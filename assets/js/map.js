@@ -436,8 +436,6 @@ $(window).load(function(){
 
         // Marqueurs communs
 
-    loadmarker(liststatue,Statue,i18n.cat01,"statue","");
-    loadmarker(listteleport,Teleport,i18n.cat02,"tp","");
     loadmarker(listcristal,Cristal,i18n.cat11,"","");
     loadmarker(listelectroc,Electrocris,i18n.cat12,"","");
     loadmarker(listfbrume,Fbrume,i18n.cat13,"","");
@@ -458,6 +456,8 @@ $(window).load(function(){
 
     if (REGION === "mondstadt") {
 
+        loadmarker(liststatue,Statue,i18n.cat01,"statue","");
+        loadmarker(listteleport,Teleport,i18n.cat02,"tp","");
         var markerspano = loadmarker(listpano,Pano,i18n.cat03,"pano","pano");
         initmarker (markerspano, "pano");
         var markerscordi = loadmarker(listcordi,Cordi,i18n.cat04,"oc","cordi");
@@ -509,6 +509,8 @@ $(window).load(function(){
             L.marker([  60,1943], {icon: Null, title: ""}).addTo(mymap).bindPopup('<h4><img src="media/logo.jpg"/><br>TMKFrench - LGDC</h4><h3>NEW !!! All Viewpoint<br>Welcome to our Interactive Map !</h3><p>Clic on a Marker of your choice for more information.<br>Use mouse wheel to zoom<br>and the menu to toggle POIs.<br><a style="color:red;">Marker\'s count : ' + nbtmark + '</a><br><br><a style="color : red;"><strong>Release V3.5 of 11/11/2020</strong></a><br>Adding Materials markers. Using local storage instead of cookies.<br>Liyue\'s Map is Online<br><br>If you want to participate, giving me new location on<br>map, feel free to contact me by mail<br>at infomap@tmkfrench.fr or by Discord PM : TMKFrench#4221', {'minWidth': '640px','minHeight': '480px'}).openPopup();
         };
     } else {
+        loadmarker(liststatue,Statue,i18n.cat01,"statuel","");
+        loadmarker(listteleport,Teleport,i18n.cat02,"tpl","");
         var markerspano = loadmarker(listpano,Pano,i18n.cat03,"panol","panol");
         initmarker (markerspano, "panol");
         var markerscordi = loadmarker(listcordi,Cordi,i18n.cat04,"ocl","cordil");
